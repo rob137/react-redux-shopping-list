@@ -1,9 +1,14 @@
 import React from 'react';
 
 export default function ListItem(props) {
+  let classes = "shopping-item";
+  if (props.crossed === true) {
+    classes += ' shopping-item__checked';
+  }
+  
   return (
     <li>
-      <span className="shopping-item">{props.name}</span>
+      <span className={classes}>{props.name}</span>
       <div className="shopping-item-controls">
         <button className="shopping-item-toggle">
           <span className="button-label">check</span>

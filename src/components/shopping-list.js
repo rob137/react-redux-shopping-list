@@ -9,12 +9,14 @@ export class ShoppingList extends React.Component {
   }
   
   render() {
-    console.log(this.props);
     const listItems = this.props.shoppingList.map((item, index) => {
       return (
-        <ListItem name={item.name} 
-        addListItem={() => this.props.addListItem()} 
-          key={index}/> 
+        <ListItem 
+          name={item.name} 
+          addListItem={() => this.props.addListItem()} 
+          crossed={item.crossed}
+          key={index}
+        /> 
       )
     });
     return (
@@ -36,7 +38,7 @@ ShoppingList.defaultProps = {
 }
 
 const mapStateToProps = state => ({
-  shoppingLists: state.shoppingLists
+  shoppingList: state.shoppingList
 });
 
 export default connect(mapStateToProps)(ShoppingList);
