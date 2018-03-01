@@ -8,7 +8,7 @@ export default function ListItem(props) {
         <button className="shopping-item-toggle">
           <span className="button-label">check</span>
         </button>
-        <button className="shopping-item-delete">
+        <button onClick={() => props.addListItem()} className="shopping-item-delete">
           <span className="button-label">delete</span>
         </button>
       </div>

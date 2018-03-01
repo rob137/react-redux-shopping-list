@@ -1,5 +1,4 @@
 import * as actions from './actions';
-console.log(actions);
 
 const initialState = {
   shoppingList: [{
