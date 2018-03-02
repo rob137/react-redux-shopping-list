@@ -45,7 +45,6 @@ export const reducer = (state=initialState, action) => {
         return item;
       }
     });
-    console.log(state);
     return Object.assign({}, state, { shoppingList: updatedList });
   }
   return state;
