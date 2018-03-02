@@ -10,7 +10,7 @@ export default function ListItem(props) {
   return (
     <li>
       <span className={classes}>{props.name}</span>
-      <ShoppingItemControls />
+      <ShoppingItemControls name={props.name} />
     </li>
   )
 }

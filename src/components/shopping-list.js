@@ -3,9 +3,6 @@ import {connect} from 'react-redux';
 import ListItem from './list-item';
 
 export class ShoppingList extends React.Component {
-  addListItem(name) {
-    this.props.dispatch(addListItem(name));
-  }
   
   render() {
     const listItems = this.props.shoppingList.map((item, index) => {
