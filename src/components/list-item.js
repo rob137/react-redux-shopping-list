@@ -10,7 +10,7 @@ export default function ListItem(props) {
   return (
     <li>
       <span className={classes}>{props.name}</span>
-      <ShoppingItemControls name={props.name} />
+      <ShoppingItemControls name={props.name} deleteListItem={props.deleteListItem}/>
     </li>
   )
 }

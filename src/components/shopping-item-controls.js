@@ -6,7 +6,7 @@ export default function ShoppingItemControls(props) {
   return (
     <div className="shopping-item-controls">
       <CheckButton />
-      <DeleteButton name={props.name}/>
+      <DeleteButton name={props.name} deleteListItem={props.deleteListItem}/>
     </div>
   )
 }

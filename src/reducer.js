@@ -29,8 +29,9 @@ export const reducer = (state=initialState, action) => {
     const listMinusTarget = state.shoppingList.filter(item => {
       return item.name !== action.name
     })
+    console.log(state);
     return Object.assign({}, state, {
-      shoppinglist: listMinusTarget
+      shoppingList: listMinusTarget
     })
   }
   else if (action.type === actions.CROSS_LIST_ITEM) {
