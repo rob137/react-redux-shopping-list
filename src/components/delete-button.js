@@ -1,5 +1,4 @@
 import React from 'react';
-import { deleteListItem } from '../actions';
 
 export default function DeleteButton(props) {
   return (
