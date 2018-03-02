@@ -29,7 +29,6 @@ export const reducer = (state=initialState, action) => {
     const listMinusTarget = state.shoppingList.filter(item => {
       return item.name !== action.name
     })
-    console.log(state);
     return Object.assign({}, state, {
       shoppingList: listMinusTarget
     })
@@ -46,7 +45,8 @@ export const reducer = (state=initialState, action) => {
         return item;
       }
     });
-    return Object.assign({}, state, {updatedList});
+    console.log(state);
+    return Object.assign({}, state, { shoppingList: updatedList });
   }
   return state;
 }

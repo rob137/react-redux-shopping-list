@@ -5,8 +5,13 @@ import DeleteButton from './delete-button';
 export default function ShoppingItemControls(props) {
   return (
     <div className="shopping-item-controls">
-      <CheckButton />
-      <DeleteButton name={props.name} deleteListItem={props.deleteListItem}/>
+      <CheckButton name={props.name}
+        crossListItem={props.crossListItem}
+      />
+
+      <DeleteButton name={props.name} 
+        deleteListItem={props.deleteListItem}
+      />
     </div>
   )
 }
