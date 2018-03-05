@@ -13,14 +13,15 @@ const initialState = {
   }, {
     name: "bread",
     crossed: false
-  }]
+  }],
+  input: ''
 }
 
 export const reducer = (state=initialState, action) => {
   if(action.type === actions.ADD_LIST_ITEM) {
     return Object.assign({}, state, {
       shoppingList: [...state.shoppingList, {
-        name: action.name,
+        name: state.input,
         crossed: false
       }]
     })
@@ -46,6 +47,9 @@ export const reducer = (state=initialState, action) => {
       }
     });
     return Object.assign({}, state, { shoppingList: updatedList });
+  }
+  else if (action.type === actions.ADD_INPUT_CHANGE) {
+    return Object.assign({}, state, { input: action.input });
   }
   return state;
 }

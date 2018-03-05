@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addListItem } from '../actions';
+import { addListItem, addInputChange } from '../actions';
 import ShoppingListEntry from './shopping-list-entry';
 import ShoppingListSubmit from './shopping-list-submit';
 import ShoppingListLabel from './shopping-list-label';
@@ -12,12 +12,10 @@ export class ShoppingListForm extends React.Component {
       input: ''
     }
   }
-  
-  setInput(text) {
+
+  onAddInputChange(text) {
     const input = text.trim(); 
-    this.setState({
-      input
-    })
+    this.props.dispatch(addInputChange(input));
   }
 
   addListItem(name) {
@@ -29,10 +27,10 @@ export class ShoppingListForm extends React.Component {
     return (
       <form id="js-shopping-list-form">
         <ShoppingListLabel />
-        <ShoppingListEntry setInput={(text) => this.setInput(text)} />
+        <ShoppingListEntry setInput={(text) => this.onAddInputChange(text)} />
         <ShoppingListSubmit addListItem={() => {
-          this.addListItem(this.state.input)}
-          }/>
+          this.addListItem(this.props.input)}
+        }/>
       </form>
     );
   }

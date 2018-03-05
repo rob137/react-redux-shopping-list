@@ -15,3 +15,9 @@ export const crossListItem = (name) => ({
   type: CROSS_LIST_ITEM,
   name
 })
+
+export const ADD_INPUT_CHANGE = 'ADD_INPUT_CHANGE';
+export const addInputChange = (input) => ({
+  type: ADD_INPUT_CHANGE,
+  input
+})
